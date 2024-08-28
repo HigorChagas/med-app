@@ -32,7 +32,8 @@ router.post('/postDoctor', async (req, res) => {
         password,
         medicalSpecialty,
         medicalRegistration,
-        email, phone
+        email, 
+        phone
     } = req.body
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -88,5 +89,7 @@ router.delete('/doctors/:id', async (req, res) => {
         res.status(500).send(error);
     }
 });
+
+
 
 export default router;
