@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import 'dotenv/config';
 
-mongoose.connect('mongodb://localhost:27017/medi-app');
+mongoose.connect(process.env.DATABASE);
 
 const db = mongoose.connection;
 
