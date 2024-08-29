@@ -32,7 +32,7 @@ router.post('/postDoctor', async (req, res) => {
         password,
         medicalSpecialty,
         medicalRegistration,
-        email, 
+        email,
         phone
     } = req.body
     try {
@@ -43,7 +43,7 @@ router.post('/postDoctor', async (req, res) => {
             password: hashedPassword,
             medicalSpecialty,
             medicalRegistration,
-            email, 
+            email,
             phone
         });
         res.send(doctor);
@@ -89,7 +89,5 @@ router.delete('/doctors/:id', async (req, res) => {
         res.status(500).send(error);
     }
 });
-
-
 
 export default router;

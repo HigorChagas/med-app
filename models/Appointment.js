@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import Pacient from './Pacient.js';
+import Doctor from './Doctor.js'
 
 const Schema = mongoose.Schema;
 
@@ -14,7 +16,7 @@ const appointmentSchema = new Schema(
             validate: {
                 validator: (v) => {
                     const id = new mongoose.Types.ObjectId(v);
-                    return doctor.exists({ _id: id });
+                    return Doctor.exists({ _id: id });
                 },
                 message: props => 
                     `DoctorID ${props} not found.`
@@ -26,7 +28,7 @@ const appointmentSchema = new Schema(
             validate: {
                 validator: (v) => {
                     const id = new mongoose.Types.ObjectId(v);
-                    return doctor.exists({ _id: id });
+                    return Pacient.exists({ _id: id });
                 },
                 message: props => 
                     `PacientID ${props} not found.`
